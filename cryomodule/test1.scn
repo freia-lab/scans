@@ -1,0 +1,24 @@
+<commands>
+  <loop>
+    <device>loc://iteration</device>
+    <start>0.0</start>
+    <end>5.0</end>
+    <step>1.0</step>
+    <wait>false</wait>
+    <tolerance>0.1</tolerance>
+    <body>
+      <sequence>
+        <body>
+          <include>
+            <scan_file>/opt/epics/scans/cryomodule/test2.scn</scan_file>
+            <macros>N=1</macros>
+          </include>
+          <include>
+            <scan_file>/opt/epics/scans/cryomodule/test2.scn</scan_file>
+            <macros>N=2</macros>
+          </include>
+        </body>
+      </sequence>
+    </body>
+  </loop>
+</commands>

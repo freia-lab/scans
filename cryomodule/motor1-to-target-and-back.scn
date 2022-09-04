@@ -1,0 +1,27 @@
+<commands>
+  <loop>
+    <device>loc://mtr1-iteration</device>
+    <start>1.0</start>
+    <end>3.0</end>
+    <step>1.0</step>
+    <wait>false</wait>
+    <tolerance>0.1</tolerance>
+    <body>
+      <comment>
+        <text>New iteration</text>
+      </comment>
+      <sequence>
+        <body>
+          <include>
+            <scan_file>/opt/epics/scans/cryomodule/motor1-to-target-pos.scn</scan_file>
+            <macros/>
+          </include>
+          <include>
+            <scan_file>/opt/epics/scans/cryomodule/motor1-to-home-pos.scn</scan_file>
+            <macros/>
+          </include>
+        </body>
+      </sequence>
+    </body>
+  </loop>
+</commands>

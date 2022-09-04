@@ -1,0 +1,20 @@
+<commands>
+  <loop>
+    <device>loc://test2-$(N)</device>
+    <start>0.0</start>
+    <end>15.0</end>
+    <step>4.0</step>
+    <wait>false</wait>
+    <tolerance>0.4</tolerance>
+    <body>
+      <log>
+        <devices>
+          <device>loc://test2-$(N)</device>
+        </devices>
+      </log>
+      <delay>
+        <seconds>1.0</seconds>
+      </delay>
+    </body>
+  </loop>
+</commands>
