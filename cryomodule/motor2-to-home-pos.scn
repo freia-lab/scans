@@ -3,41 +3,52 @@
     <text>Moving motor from parking to target position</text>
   </comment>
   <set>
-    <device>LLRF:Scan-MTR1:On</device>
+    <device>ESSPMAC:MTR2.VAL</device>
+    <value>3528.0</value>
+    <readback>ESSPMAC:MTR2.RBV</readback>
+    <readback_value>3528.0</readback_value>
+    <tolerance>1.0</tolerance>
+    <timeout>400.0</timeout>
+  </set>
+  <delay>
+    <seconds>3.0</seconds>
+  </delay>
+  <set>
+    <device>LLRF:Scan-MTR2:On</device>
     <value>1.0</value>
     <completion>true</completion>
     <wait>false</wait>
     <tolerance>0.1</tolerance>
   </set>
   <loop>
-    <device>ESSPMAC:MTR1.VAL</device>
-    <start>0.0</start>
-    <end>4064.0</end>
-    <step>4064.0</step>
-    <readback>ESSPMAC:MTR1.RBV</readback>
+    <device>ESSPMAC:MTR2.VAL</device>
+    <start>3528.0</start>
+    <end>0.0</end>
+    <step>-3528.0</step>
+    <readback>ESSPMAC:MTR2.RBV</readback>
     <tolerance>1.0</tolerance>
     <timeout>3000.0</timeout>
     <body>
       <log>
         <devices>
-          <device>ESSPMAC:MTR1.RBV</device>
+          <device>ESSPMAC:MTR2.RBV</device>
         </devices>
       </log>
       <log>
         <devices>
-          <device>LLRF-PNA:Mrkr-2:Freq:sRdV</device>
+          <device>LLRF-PNA:Mrkr-3:Freq:sRdV</device>
         </devices>
       </log>
       <log>
         <devices>
-          <device>CM-CTS:TT11:sRdV</device>
+          <device>CM-CTS:TT21:sRdV</device>
         </devices>
       </log>
       <delay>
         <seconds>3.0</seconds>
       </delay>
       <wait>
-        <device>CM-CTS:TT11:sRdV</device>
+        <device>CM-CTS:TT21:sRdV</device>
         <value>200.0</value>
         <comparison>BELOW</comparison>
         <tolerance>0.1</tolerance>
@@ -46,20 +57,10 @@
     </body>
   </loop>
   <set>
-    <device>LLRF:Scan-MTR1:On</device>
+    <device>LLRF:Scan-MTR2:On</device>
     <value>0.0</value>
     <completion>true</completion>
     <wait>false</wait>
     <tolerance>0.1</tolerance>
   </set>
-  <comment>
-    <text>Waiting for deltaF/delta_t to become zero.</text>
-  </comment>
-  <wait>
-    <device>LLRF-PNA:Mrkr-2:Freq-rate</device>
-    <value>0.0</value>
-    <comparison>EQUALS</comparison>
-    <tolerance>0.2</tolerance>
-    <timeout>200.0</timeout>
-  </wait>
 </commands>

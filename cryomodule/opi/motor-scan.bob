@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>motor-scan</name>
-  <macros>
-    <MRKR>2</MRKR>
-    <MTR>1</MTR>
-  </macros>
   <widget type="bool_button" version="2.0.0">
     <name>Boolean Button</name>
-    <pv_name>LLRF:Scan-MTR$(MTR):On</pv_name>
+    <pv_name>LLRF:Scan-MTR$(MTR=1):On</pv_name>
     <x>40</x>
     <y>30</y>
     <width>180</width>
@@ -23,7 +19,7 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry</name>
-    <pv_name>LLRF:Scan-MTR$(MTR):minDeltaF-rate</pv_name>
+    <pv_name>LLRF:Scan-MTR$(MTR=1):minDeltaF-rate</pv_name>
     <x>380</x>
     <y>70</y>
     <width>110</width>
@@ -38,7 +34,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update</name>
-    <pv_name>LLRF-PNA:Mrkr-$(MRKR):Freq-rate</pv_name>
+    <pv_name>LLRF-PNA:Mrkr-$(MRKR=2):Freq-rate</pv_name>
     <x>380</x>
     <y>100</y>
     <width>110</width>
@@ -54,7 +50,7 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_1</name>
-    <pv_name>LLRF:Scan-MTR$(MTR):minMtrPos</pv_name>
+    <pv_name>LLRF:Scan-MTR$(MTR=1):minMtrPos</pv_name>
     <x>380</x>
     <y>130</y>
     <width>110</width>
@@ -68,13 +64,13 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_1</name>
-    <pv_name>ESSPMAC:MTR$(MTR).RBV</pv_name>
+    <pv_name>ESSPMAC:MTR$(MTR=1).RBV</pv_name>
     <x>170</x>
     <y>180</y>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_2</name>
-    <pv_name>ESSPMAC:MTR$(MTR).VAL</pv_name>
+    <pv_name>ESSPMAC:MTR$(MTR=1).VAL</pv_name>
     <x>380</x>
     <y>180</y>
     <width>110</width>
@@ -95,7 +91,7 @@
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED</name>
-    <pv_name>LLRF:Scan-MTR1:cStop</pv_name>
+    <pv_name>LLRF:Scan-MTR$(MTR=1):cStop</pv_name>
     <x>380</x>
     <y>280</y>
     <off_color>
@@ -116,7 +112,7 @@
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED_1</name>
-    <pv_name>ESSPMAC:MTR$(MTR).MOVN</pv_name>
+    <pv_name>ESSPMAC:MTR$(MTR=1).MOVN</pv_name>
     <x>380</x>
     <y>240</y>
   </widget>
@@ -128,7 +124,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_3</name>
-    <pv_name>CM-CTS:TT$(MTR)1:sRdV</pv_name>
+    <pv_name>CM-CTS:TT$(MTR=1)1:sRdV</pv_name>
     <x>170</x>
     <y>210</y>
   </widget>

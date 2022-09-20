@@ -4,9 +4,9 @@
   </comment>
   <set>
     <device>ESSPMAC:MTR1.VAL</device>
-    <value>4000.0</value>
+    <value>3860.0</value>
     <readback>ESSPMAC:MTR1.RBV</readback>
-    <readback_value>4000.0</readback_value>
+    <readback_value>3860.0</readback_value>
     <tolerance>1.0</tolerance>
     <timeout>400.0</timeout>
   </set>
@@ -22,12 +22,12 @@
   </set>
   <loop>
     <device>ESSPMAC:MTR1.VAL</device>
-    <start>4000.0</start>
+    <start>3860.0</start>
     <end>0.0</end>
-    <step>-4000.0</step>
+    <step>-3860.0</step>
     <readback>ESSPMAC:MTR1.RBV</readback>
     <tolerance>1.0</tolerance>
-    <timeout>2700.0</timeout>
+    <timeout>3000.0</timeout>
     <body>
       <log>
         <devices>
